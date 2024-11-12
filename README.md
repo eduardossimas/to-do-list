@@ -1,50 +1,92 @@
-# React + TypeScript + Vite
+# To-Do List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um aplicativo de lista de tarefas simples construído com Vite, TypeScript, React e Tailwind CSS.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-## Expanding the ESLint configuration
+## Instalação
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone o repositório:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/seu-usuario/to-do-list-app.git
+cd to-do-list-app
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Instale as dependências
+
+```bash
+npm install
+```
+
+3. Inicie o servidor de desenvolvimento
+
+```bash
+npm run dev
+```
+
+4. Abra o navegador e acesse [http://localhost:3000](http://localhost:3000).
+
+## Estrutura do Projeto
+
+```plaintext
+.
+├── public
+│   └── favicon.ico
+├── src
+│   ├── assets
+│   │   └── Logo.svg
+│   ├── components
+│   │   ├── CurrentTasks.tsx
+│   │   ├── NewTask.tsx
+│   │   └── Task.tsx
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .eslintrc.cjs
+├── [index.html](http://_vscodecontentref_/0)
+├── [package.json](http://_vscodecontentref_/1)
+├── postcss.config.cjs
+├── tailwind.config.cjs
+├── [tsconfig.json](http://_vscodecontentref_/2)
+└── [vite.config.ts](http://_vscodecontentref_/3)
+```
+
+## Scripts Disponíveis
+
+- `npm run dev`: Inicia o servidor de desenvolvimento.
+- `npm run build`: Cria uma versão de produção do aplicativo.
+- `npm run serve`: Serve a versão de produção do aplicativo.
+- `npm run lint`: Executa o linter para verificar problemas no código.
+
+## Configuração do Tailwind CSS
+
+O Tailwind CSS está configurado no arquivo `tailwind.config.cjs`:
 
 ```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {},
   },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+  plugins: [],
+}
 ```
+## Funcionalidades
+
+- Adicionar novas tarefas
+- Marcar tarefas como concluídas
+- Excluir tarefas
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
